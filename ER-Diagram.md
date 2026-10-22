@@ -1,23 +1,29 @@
-erDiagram USERS ||--o{ TASKS : creates USERS ||--o{ CATEGORIES : owns CATEGORIES o|--o{ TASKS : contains
+# TaskManager ER Diagram
 
-USERS {
-    int id PK
-    varchar name
-    varchar email
-    varchar password
-}
+```mermaid
+erDiagram
+    USERS ||--o{ TASKS : creates
+    USERS ||--o{ CATEGORIES : owns
+    CATEGORIES o|--o{ TASKS : contains
 
-TASKS {
-    int id PK
-    int user_id FK
-    int category_id FK
-    varchar title
-    text description
-    varchar status
-}
+    USERS {
+        int id PK
+        varchar name
+        varchar email
+        varchar password
+    }
 
-CATEGORIES {
-    int id PK
-    int user_id FK
-    varchar name
-}
+    TASKS {
+        int id PK
+        int user_id FK
+        int category_id FK
+        varchar title
+        text description
+        varchar status
+    }
+
+    CATEGORIES {
+        int id PK
+        int user_id FK
+        varchar name
+    }
