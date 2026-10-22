@@ -1,4 +1,4 @@
-erDiagram
+```erDiagram
     USERS ||--o{ TASKS : creates
     USERS ||--o{ CATEGORIES : owns
     CATEGORIES o|--o{ TASKS : contains
